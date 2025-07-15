@@ -15,6 +15,7 @@ services:
 
   airflow-webserver:
     image: apache/airflow:2.9.2
+    user: root
     restart: always
     depends_on:
       postgres:
@@ -30,12 +31,15 @@ services:
       - ./logs:/opt/airflow/logs
       - ./plugins:/opt/airflow/plugins
       - ./scripts:/opt/airflow/scripts
+      - ./requirements.txt:/opt/airflow/requirements.txt
+      - /var/run/docker.sock:/var/run/docker.sock
     ports:
       - "8080:8080"
     command: webserver
 
   airflow-scheduler:
     image: apache/airflow:2.9.2
+    user: root
     restart: always
     depends_on:
       - airflow-webserver
@@ -47,6 +51,8 @@ services:
       - ./logs:/opt/airflow/logs
       - ./plugins:/opt/airflow/plugins
       - ./scripts:/opt/airflow/scripts  
+      - ./requirements.txt:/opt/airflow/requirements.txt  
+      - /var/run/docker.sock:/var/run/docker.sock
     command: scheduler
 
 volumes:
