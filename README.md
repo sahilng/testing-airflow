@@ -18,7 +18,7 @@ This starts Postgres, Airflow webserver, and scheduler in detached mode.
 ./init.sh
 ```
 
-This runs `airflow db init` and `airflow users create`.
+This runs `airflow db migrate` and `airflow users create`.
 
 3. Visit the UI:
 
