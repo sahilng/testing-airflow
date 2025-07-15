@@ -2,7 +2,7 @@
 set -e
 
 echo "Initializing Airflow DB..."
-docker-compose run --rm -T airflow-webserver airflow db init
+docker-compose run --rm -T airflow-webserver airflow db migrate
 
 echo "Creating admin user..."
 docker-compose run --rm -T airflow-webserver airflow users create \
