@@ -1,6 +1,6 @@
 # testing-airflow
 
-A sample Airflow setup using Docker Compose, LocalExecutor, and a Postgres metadata database.
+A sample Airflow setup using Docker Compose, LocalExecutor, and a Postgres metadata database
 
 ## 🔧 Setup
 
