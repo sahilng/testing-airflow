@@ -1,11 +1,6 @@
-# Airflow LocalExecutor with Docker Compose
+# testing-airflow
 
-This repo sets up Apache Airflow using:
-
-- LocalExecutor
-- PostgreSQL as metadata DB
-- Docker Compose
-- Volume-mounted `dags/`, `logs/`, and `plugins/` directories
+A sample Airflow setup using Docker Compose, LocalExecutor, and a Postgres metadata database.
 
 ## 🔧 Setup
 
